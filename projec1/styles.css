@@ -1,0 +1,247 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002529;
+    padding: 20px;
+    color: #f8fff0;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    color: #f8fff0;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.navbar .menu a:hover {
+    color: #f7f9fa;
+}
+
+.navbar .menu a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f8fff0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+}
+
+.navbar .menu a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Toggle Button */
+
+/* Dark Mode */
+.dark-mode-button {
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Dark Mode button icon */
+.dark-mode-icon {
+    font-size: 24px;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the toggle switch */
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 34px;
+    border-radius: 17px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Style the switch thumb (indicator) */
+.toggle-switch::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    background-color: #030303;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s;
+}
+
+/* Change the switch thumb position based on the checked state */
+.dark-mode-toggle input[type="checkbox"]:checked+.toggle-switch::before {
+    transform: translateX(26px);
+}
+
+/* Dark Mode toggle icon */
+.dark-mode-icon {
+    font-size: 24px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* Adjust the icon position */
+.toggle-switch .dark-mode-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+}
+
+.toggle-switch .light-mode-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1b1f23;
+    color: #f7f9fa;
+}
+
+body.dark-mode .navbar .menu a {
+    color: #f7f9fa;
+}
+
+body.dark-mode .navbar .menu a:hover {
+    color: #f8fff0;
+}
+
+body.dark-mode .navbar .menu a::before {
+    background-color: #f7f9fa;
+}
+
+/* Styling the DashBoard */
+
+.dashboard {
+    padding: 20px 0;
+}
+
+.dashboard.dark-mode {
+    background-color: #1b1f23;
+    color: #f7f9fa;
+}
+
+.dashboard-section {
+    background-color: #00252946;
+    color: #f8fff0;
+    padding: 3rem 0;
+}
+
+.dashboard-section h1 {
+    font-size: 2.5rem;
+}
+
+.dashboard-section h3 {
+    font-size: 1.5rem;
+}
+
+.dashboard-section p {
+    font-size: 1rem;
+}
+
+.product-device,
+.product-device-2 {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+}
+
+.product-device-2 {
+    bottom: -80px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styling the Features  */
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #69b4c0;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.feature-item i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 18px;
+}
+
+[data-animation="cube"] {
+    animation: cubeAnimation 1s ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes cubeAnimation {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateY(90deg);
+    }
+}
